@@ -1,33 +1,55 @@
 {
- "generated_at": "2026-11-23T11:26:39.021023+00:00",
+ "generated_at": "2026-11-23T17:59:48.175727+00:00",
  "max_days": 14,
  "sources": {
-  "Company careers boards (Greenhouse, Lever, Ashby, Workable, SmartRecruiters)": "ok (111/111 boards, 11941 adverts)",
-  "Company careers (Workday: Salesforce, LSEG, RELX, Aviva)": "ok (4/4 sites, 125 adverts)",
-  "Workable job search": "ok (572 adverts)",
-  "Reed (RSS feed)": "ok (1295 in feed, 62 adverts read)",
-  "NHS Jobs": "ok (516 adverts)",
+  "Company careers boards (Greenhouse, Lever, Ashby, Workable, SmartRecruiters)": "ok (111/111 boards, 11893 adverts)",
+  "Company careers (Workday: Salesforce, LSEG, RELX, Aviva)": "ok (4/4 sites, 126 adverts)",
+  "Workable job search": "ok (575 adverts)",
+  "Reed (RSS feed)": "ok (1312 in feed, 66 adverts read)",
+  "NHS Jobs": "ok (517 adverts)",
   "Adzuna API": "inactive: add repo secrets ADZUNA_APP_ID and ADZUNA_APP_KEY",
   "Reed API": "inactive: add repo secret REED_API_KEY",
   "Jooble API": "inactive (optional): add repo secret JOOBLE_API_KEY"
  },
  "per_source": {
-  "Reed": 17,
+  "Reed": 19,
   "Workable": 4,
   "Company careers": 1
  },
- "raw_count": 13216,
+ "raw_count": 13177,
  "excluded": {
-  "excluded title": 9952,
-  "not a target title": 3039,
-  "older than 14 days": 47,
-  "outside London area": 86,
-  "contract / fixed-term": 40,
-  "not full-time permanent": 17,
+  "excluded title": 9935,
+  "older than 14 days": 49,
+  "not a target title": 3005,
+  "outside London area": 84,
+  "contract / fixed-term": 42,
+  "not full-time permanent": 25,
   "security clearance": 1
  },
- "count": 22,
+ "count": 24,
  "jobs": [
+  {
+   "source": "Reed",
+   "title": "CRM Support Business Analyst",
+   "company": "Arc IT Recruitment",
+   "location": "London, South East England, GB",
+   "url": "https://www.reed.co.uk/jobs/crm-support-business-analyst/57602195",
+   "posted": "2026-11-23T00:00:00+00:00",
+   "salary_min": null,
+   "salary_max": null,
+   "salary_text": "",
+   "contract": null,
+   "hours": "full-time",
+   "roles": [
+    "P1",
+    "B1"
+   ],
+   "role": "Salesforce Business Analyst",
+   "where": "London",
+   "age_days": 0,
+   "salary": "",
+   "id": "arc-it-crm-support-business-analyst"
+  },
   {
    "source": "Reed",
    "title": "Business Analyst",
@@ -48,6 +70,27 @@
    "age_days": 0,
    "salary": "£50,000 – £70,000",
    "id": "tenth-revolution-business-analyst"
+  },
+  {
+   "source": "Reed",
+   "title": "Business Analyst - Group Risk Compliance",
+   "company": "Lorien",
+   "location": "London, South East England, GB",
+   "url": "https://www.reed.co.uk/jobs/business-analyst-group-risk-compliance-lorien/57601903",
+   "posted": "2026-11-23T00:00:00+00:00",
+   "salary_min": null,
+   "salary_max": null,
+   "salary_text": "",
+   "contract": null,
+   "hours": "full-time",
+   "roles": [
+    "B1"
+   ],
+   "role": "Business Analyst",
+   "where": "London",
+   "age_days": 0,
+   "salary": "",
+   "id": "lorien-business-analyst-group-risk-compliance"
   },
   {
    "source": "Reed",

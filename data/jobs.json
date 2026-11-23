@@ -1,0 +1,29 @@
+{
+ "generated_at": "2026-11-23T01:40:11.700397+00:00",
+ "max_days": 3,
+ "sources": {
+  "Adzuna": "inactive: add repo secrets ADZUNA_APP_ID and ADZUNA_APP_KEY",
+  "Reed": "inactive: add repo secret REED_API_KEY",
+  "Jooble": "inactive (optional): add repo secret JOOBLE_API_KEY",
+  "Company careers (Greenhouse/Lever/Ashby)": "ok (625 raw from 10 boards)"
+ },
+ "raw_count": 625,
+ "excluded": {
+  "excluded title": 422,
+  "not a target title": 202,
+  "older than 3 days": 1
+ },
+ "count": 0,
+ "jobs": [],
+ "filters": [
+  "Target titles only (11 role families)",
+  "Full-time, permanent",
+  "London + ~20 miles",
+  "Posted in the last 3 days",
+  "Excludes senior / lead / manager / architect / developer",
+  "Excludes contract, fixed-term, part-time, internships",
+  "Excludes security-clearance roles",
+  "Excludes sales jobs at Salesforce itself",
+  "Deduplicated by title + company"
+ ]
+}

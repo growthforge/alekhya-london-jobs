@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0f2a44">
+<meta name="description" content="Alekhya Bheema: London job-search cockpit for Salesforce BA, Consultant and Administrator roles.">
+<title>Alekhya · London Job Search</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icon-192.png">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<a class="skip" href="#view">Skip to content</a>
+<div class="shell">
+  <aside class="sidebar" aria-label="Main navigation">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">AB</div>
+      <div><div class="brand-name">Alekhya Bheema</div><div class="brand-sub">London job search</div></div>
+    </div>
+    <nav id="sidenav"></nav>
+    <div class="side-foot">Data stays in this browser. <a href="#/toolkit">How it works</a></div>
+  </aside>
+  <div class="main">
+    <header class="topbar">
+      <div class="logo sm" aria-hidden="true">AB</div>
+      <h1 id="pagetitle">Today</h1>
+      <button class="icon-btn" id="themeBtn" aria-label="Toggle dark mode" title="Toggle dark mode">◐</button>
+    </header>
+    <main id="view" tabindex="-1"></main>
+  </div>
+</div>
+<nav class="bottomnav" id="bottomnav" aria-label="Primary"></nav>
+<div class="sheet-backdrop" id="sheetBackdrop" hidden></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="More pages" hidden></div>
+<div class="modal-backdrop" id="modalBackdrop" hidden>
+  <div class="modal" id="modal" role="dialog" aria-modal="true"></div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="config.js"></script>
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

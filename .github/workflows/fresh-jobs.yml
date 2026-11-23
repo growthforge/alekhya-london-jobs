@@ -1,0 +1,45 @@
+name: Fresh jobs (daily)
+
+on:
+  schedule:
+    # 06:15 UTC Mon–Fri = 06:15 GMT in winter / 07:15 BST in summer (ready before the 08:00 routine)
+    - cron: "15 6 * * 1-5"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fresh-jobs
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Test filters
+        run: python3 tests/test_filters.py
+      - name: Fetch and filter jobs
+        env:
+          ADZUNA_APP_ID: ${{ secrets.ADZUNA_APP_ID }}
+          ADZUNA_APP_KEY: ${{ secrets.ADZUNA_APP_KEY }}
+          REED_API_KEY: ${{ secrets.REED_API_KEY }}
+          JOOBLE_API_KEY: ${{ secrets.JOOBLE_API_KEY }}
+          MAX_DAYS: "3"
+        run: python3 scripts/fetch_jobs.py
+      - name: Commit jobs.json if changed
+        run: |
+          git config user.name "fresh-jobs-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/jobs.json
+          if git diff --cached --quiet; then
+            echo "No change"
+          else
+            git commit -m "Fresh jobs: $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git push
+          fi

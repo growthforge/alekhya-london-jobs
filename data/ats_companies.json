@@ -1,0 +1,12 @@
+[
+ {"name": "Monzo", "ats": "greenhouse", "token": "monzo"},
+ {"name": "GoCardless", "ats": "greenhouse", "token": "gocardless"},
+ {"name": "Deliveroo", "ats": "greenhouse", "token": "deliveroo"},
+ {"name": "Wise", "ats": "greenhouse", "token": "wise"},
+ {"name": "Tide", "ats": "greenhouse", "token": "tide"},
+ {"name": "Cleo", "ats": "greenhouse", "token": "cleo"},
+ {"name": "Octopus Energy", "ats": "lever", "token": "octoenergy"},
+ {"name": "Zopa", "ats": "lever", "token": "zopa"},
+ {"name": "Multiverse", "ats": "ashby", "token": "multiverse"},
+ {"name": "Synthesia", "ats": "ashby", "token": "synthesia"}
+]

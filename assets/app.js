@@ -212,35 +212,42 @@
   }
 
   V.fresh = function () {
-    return '<div class="page-head"><div class="eyebrow">Refreshed every weekday ~06:15 UK</div><h2>Fresh jobs</h2><p>Filtered for Alekhya: target titles only, full-time permanent, London + about 20 miles, recently posted, deduplicated.</p></div><div id="freshBody"><div class="card empty">Loading…</div></div>';
+    return '<div class="page-head"><div class="eyebrow">Refreshed every weekday ~06:15 UK</div><h2>Fresh jobs</h2><p>Real adverts for Alekhya’s target roles: full-time permanent, London + about 20 miles (or UK-wide remote), posted in the last two weeks, no senior / lead / contract roles, duplicates removed.</p></div><div id="freshBody"><div class="card empty">Loading…</div></div>';
   };
   V.fresh.after = function () {
     loadJobs().then(function (j) {
-      var jobs = j.jobs || [], src = j.sources || {}, active = Object.keys(src).filter(function (k) { return /^ok/.test(src[k]); });
-      var inactive = Object.keys(src).filter(function (k) { return /inactive/.test(src[k]); });
-      var upd = j.generated_at ? new Date(j.generated_at).toLocaleString("en-GB", { timeZone: "Europe/London", weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" }) + " UK" : "not yet";
-      var html = (inactive.length && inactive.some(function (k) { return !/optional/.test(src[k]); }) ? '<div class="banner"><span>⚠︎</span><span><b>Job-board feeds are not switched on yet.</b> Only company careers pages are being checked. Adzuna and Reed start once their free API keys are added (see Toolkit → Fresh jobs setup).</span></div>' : "") +
-        '<div class="card"><div class="role-head"><div><h3>' + jobs.length + " job" + (jobs.length === 1 ? "" : "s") + '</h3><div class="sub">Updated ' + esc(upd) + " · last " + esc(j.max_days || 3) + ' days</div></div><button class="btn sm" id="showSrc">Sources &amp; filters</button></div>' +
-        (jobs.length ? '<div class="searchbar" style="margin-top:12px"><span class="muted">⌕</span><input id="jobQ" placeholder="Filter by title or company" aria-label="Filter jobs"></div>' : "") + "</div>" +
+      var jobs = j.jobs || [], src = j.sources || {}, per = j.per_source || {};
+      var keyed = Object.keys(src).filter(function (k) { return /inactive/.test(src[k]) && !/optional/.test(src[k]); });
+      var upd = j.generated_at ? new Date(j.generated_at).toLocaleString("en-GB", { timeZone: "Europe/London", weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" }) + " UK time" : "not yet";
+      var roleF = store.get("freshRole", "all");
+      var roles = []; jobs.forEach(function (x) { if (x.role && roles.indexOf(x.role) < 0) roles.push(x.role); });
+      if (roleF !== "all" && roles.indexOf(roleF) < 0) roleF = "all";
+      var html = '<div class="card"><div class="role-head"><div><h3>' + jobs.length + " live job" + (jobs.length === 1 ? "" : "s") + '</h3><div class="sub">Last updated ' + esc(upd) + " · posted in the last " + esc(j.max_days || 14) + ' days</div></div><button class="btn sm" id="showSrc">Sources &amp; filters</button></div>' +
+        (Object.keys(per).length ? '<div class="chips" style="margin-top:10px">' + Object.keys(per).sort(function (a, b) { return per[b] - per[a]; }).map(function (k) { return '<span class="tag">' + esc(k) + " · " + per[k] + "</span>"; }).join("") + "</div>" : "") +
+        (jobs.length > 3 ? '<div class="searchbar" style="margin-top:12px"><span class="muted">⌕</span><input id="jobQ" placeholder="Filter by title or company" aria-label="Filter jobs"></div>' +
+          '<div class="chips scroll" style="margin-top:10px"><button class="chip' + (roleF === "all" ? " on" : "") + '" data-frole="all">All roles</button>' + roles.map(function (r) { var n = jobs.filter(function (x) { return x.role === r; }).length; return '<button class="chip' + (roleF === r ? " on" : "") + '" data-frole="' + esc(r) + '">' + esc(r) + " · " + n + "</button>"; }).join("") + "</div>" : "") +
+        (keyed.length ? '<p class="tiny muted" style="margin:10px 0 0">More boards (Adzuna, Reed API) join automatically once their free keys are added.</p>' : "") + "</div>" +
         '<div id="jobList" class="stack" style="margin-top:12px"></div>';
       $("#freshBody").innerHTML = html;
       function draw(q) {
         q = (q || "").toLowerCase();
-        var list = jobs.filter(function (x) { return !q || (x.title + " " + x.company).toLowerCase().indexOf(q) > -1; });
-        $("#jobList").innerHTML = list.length ? list.map(function (x, k) {
-          var sal = x.salary_text || (x.salary_min ? "£" + Math.round(x.salary_min).toLocaleString("en-GB") + (x.salary_max && x.salary_max !== x.salary_min ? "–£" + Math.round(x.salary_max).toLocaleString("en-GB") : "") : "");
-          return '<article class="card job"><div class="role-head"><h4>' + esc(x.title) + '</h4><span class="tag ' + (/ago|now/.test(ago(x.posted)) && (Date.now() - new Date(x.posted)) < 864e5 ? "ok" : "") + '">' + esc(ago(x.posted)) + '</span></div><div class="meta"><span><b>' + esc(x.company) + "</b></span><span>" + esc(x.location || "London") + "</span>" + (sal ? "<span>" + esc(sal) + "</span>" : "") + "</div>" +
-            '<div class="chips"><span class="tag blue">' + esc(x.source) + "</span>" + (x.also_on || []).map(function (s) { return '<span class="tag">also on ' + esc(s) + "</span>"; }).join("") + (x.role ? '<span class="tag">' + esc(x.role) + "</span>" : "") + "</div>" +
+        var list = jobs.filter(function (x) { return (roleF === "all" || x.role === roleF) && (!q || (x.title + " " + x.company).toLowerCase().indexOf(q) > -1); });
+        $("#jobList").innerHTML = list.length ? list.map(function (x) {
+          var sal = x.salary || x.salary_text || "";
+          var fresh = x.posted && (Date.now() - new Date(x.posted)) < 2 * 864e5;
+          return '<article class="card job"><div class="role-head"><h4>' + esc(x.title) + '</h4><span class="tag ' + (fresh ? "ok" : "") + '">' + esc(ago(x.posted)) + '</span></div><div class="meta"><span><b>' + esc(x.company) + "</b></span><span>" + esc(x.where === "Remote (UK)" ? "Remote (UK)" : (x.location || "London").replace(/ \(NHS search, 20 miles\)/, "")) + "</span>" + (sal ? "<span>" + esc(sal) + "</span>" : "") + "</div>" +
+            '<div class="chips">' + (x.role ? '<span class="tag blue">' + esc(x.role) + "</span>" : "") + '<span class="tag">via ' + esc(x.source.replace(/ \(careers\)$/, " careers")) + "</span>" + (x.also_on || []).map(function (s) { return '<span class="tag">also on ' + esc(s) + "</span>"; }).join("") + "</div>" +
             '<div class="btn-row" style="margin-top:6px"><a class="btn sm primary" href="' + esc(x.url) + '" target="_blank" rel="noopener">Open advert ↗</a><button class="btn sm" data-addjob="' + jobs.indexOf(x) + '">+ Tracker</button></div></article>';
-        }).join("") : '<div class="card empty"><div class="big">🌤</div><p><b>' + (jobs.length ? "No matches for that filter." : "No new matching roles in the last " + (j.max_days || 3) + " days.") + "</b></p><p class=\"small\">" + (active.length <= 1 ? "Only company careers pages are live right now, so this list is short until the job-board keys are added." : "Nothing slipped through: filters are strict on purpose.") + ' Use the date-sorted searches meanwhile.</p><a class="btn primary" href="#/today">Open all: Primary</a></div>';
-        $$("[data-addjob]").forEach(function (b) { b.onclick = function () { var x = jobs[+b.dataset.addjob], rows = T.all(); rows.unshift({ "ID": nextId(rows), "Date found": ymd(londonNow()), "Company": x.company, "Role": x.title, "Source": x.source, "Job URL": x.url, "Location / hybrid": x.location, "Salary": x.salary_text || "", "Status": "Found", "Next action": "Score fit" }); T.save(rows); toast("Added to Tracker"); }; });
+        }).join("") : '<div class="card empty"><div class="big">🔎</div><p><b>' + (jobs.length ? "No matches for that filter." : "No matching adverts in the last " + (j.max_days || 14) + " days.") + '</b></p><p class="small">The filters are strict on purpose (no senior, contract or out-of-London roles). The big boards are one tap away, already filtered and sorted newest first.</p><div class="btn-row" style="justify-content:center"><a class="btn primary" href="#/roles">Roles &amp; hot links</a><a class="btn" href="#/today">Open all: Primary</a></div></div>';
+        $$("[data-addjob]").forEach(function (b) { b.onclick = function () { var x = jobs[+b.dataset.addjob], rows = T.all(); if (rows.some(function (r) { return r["Job URL"] === x.url; })) { toast("Already in Tracker"); return; } rows.unshift({ "ID": nextId(rows), "Date found": ymd(londonNow()), "Company": x.company, "Role": x.title, "Track": x.role || "", "Source": x.source, "Job URL": x.url, "Location / hybrid": x.location, "Salary": x.salary || "", "Status": "Found", "Next action": "Score fit" }); T.save(rows); toast("Added to Tracker"); }; });
       }
       draw();
       var q = $("#jobQ"); if (q) q.addEventListener("input", function () { draw(q.value); });
+      $$("[data-frole]").forEach(function (b) { b.onclick = function () { roleF = b.dataset.frole; store.set("freshRole", roleF); $$("[data-frole]").forEach(function (c) { c.classList.toggle("on", c === b); }); draw(q ? q.value : ""); }; });
       $("#showSrc").onclick = function () {
-        modal("<h3>Sources &amp; filters</h3>" + Object.keys(src).map(function (k) { var s = src[k]; return '<div class="source-row"><span>' + esc(k) + '</span><span class="tag ' + (/^ok/.test(s) ? "ok" : /optional/.test(s) ? "" : "warn") + '">' + esc(s.replace(/^inactive( \(optional\))?: /, "needs key: ").replace(/^ok /, "")) + "</span></div>"; }).join("") +
+        modal("<h3>Sources checked this run</h3>" + Object.keys(src).map(function (k) { var s = src[k]; return '<div class="source-row"><span>' + esc(k) + '</span><span class="tag ' + (/^ok/.test(s) ? "ok" : /optional/.test(s) ? "" : "warn") + '" style="white-space:normal;text-align:right">' + esc(s.replace(/^inactive( \(optional\))?: add repo secrets? /, "needs key: ").replace(/^ok \((.*)\)(;.*)?$/, "$1$2")) + "</span></div>"; }).join("") +
           '<h3 style="margin-top:16px">Filters applied</h3><ul class="steps small">' + (j.filters || []).map(function (f) { return "<li>" + esc(f) + "</li>"; }).join("") + "</ul>" +
-          (j.excluded ? '<p class="small muted">Screened out this run: ' + Object.keys(j.excluded).map(function (k) { return esc(k) + " " + j.excluded[k]; }).join(" · ") + ' (of ' + esc(j.raw_count) + " checked).</p>" : "") + '<div class="row"><button class="btn primary" data-act="close">Done</button></div>');
+          (j.excluded ? '<p class="small muted">Screened out this run: ' + Object.keys(j.excluded).map(function (k) { return esc(k) + " " + Number(j.excluded[k]).toLocaleString("en-GB"); }).join(" · ") + " (of " + Number(j.raw_count || 0).toLocaleString("en-GB") + " adverts checked).</p>" : "") + '<div class="row"><button class="btn primary" data-act="close">Done</button></div>');
       };
     });
   };
@@ -368,7 +375,7 @@
       '<section class="card"><h3>Communities</h3>' + links(A.communities) + "</section>" +
       '<section class="card"><h3>Salesforce recruiters</h3>' + links(A.recruiters) + "</section>" +
       '<section class="card"><h3>Partners hiring in London</h3>' + A.partners.map(function (p) { return '<div class="source-row"><b>' + esc(p[0]) + '</b><span class="muted small" style="text-align:right">' + esc(p[1]) + "</span></div>"; }).join("") + "</section>" +
-      '<section class="card" id="setup"><h3>Fresh jobs setup</h3><p class="sub">The list refreshes itself every weekday morning via GitHub Actions. Job-board feeds need free API keys, added once as repository secrets:</p><ul class="steps small"><li><b>Adzuna</b>: ADZUNA_APP_ID and ADZUNA_APP_KEY (developer.adzuna.com)</li><li><b>Reed</b>: REED_API_KEY (reed.co.uk/developers/jobseeker)</li><li><b>Jooble</b> (optional): JOOBLE_API_KEY</li></ul><p class="small muted">Company careers pages (Monzo, Wise, Octopus Energy and others) work without keys.</p></section>' +
+      '<section class="card" id="setup"><h3>Fresh jobs setup</h3><p class="sub">The list refreshes itself every weekday morning. Live now without any keys: 110+ company careers boards (Greenhouse, Lever, Ashby, Workable, SmartRecruiters, Workday incl. Salesforce), Workable job search, Reed’s RSS feed and NHS Jobs. Optional extra boards need free API keys, added once as repository secrets:</p><ul class="steps small"><li><b>Adzuna</b>: ADZUNA_APP_ID and ADZUNA_APP_KEY (developer.adzuna.com)</li><li><b>Reed</b>: REED_API_KEY (reed.co.uk/developers/jobseeker)</li><li><b>Jooble</b> (optional): JOOBLE_API_KEY</li></ul></section>' +
       fluxCard() + "</div></div>";
   };
 

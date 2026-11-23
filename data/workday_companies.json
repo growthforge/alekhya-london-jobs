@@ -1,0 +1,6 @@
+[
+ {"name": "Salesforce", "host": "salesforce.wd12.myworkdayjobs.com", "tenant": "salesforce", "site": "External_Career_Site"},
+ {"name": "LSEG (London Stock Exchange Group)", "host": "lseg.wd3.myworkdayjobs.com", "tenant": "lseg", "site": "Careers"},
+ {"name": "RELX", "host": "relx.wd3.myworkdayjobs.com", "tenant": "relx", "site": "relx"},
+ {"name": "Aviva", "host": "aviva.wd1.myworkdayjobs.com", "tenant": "aviva", "site": "External"}
+]

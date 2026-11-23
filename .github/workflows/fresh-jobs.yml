@@ -16,7 +16,7 @@ concurrency:
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -30,7 +30,7 @@ jobs:
           ADZUNA_APP_KEY: ${{ secrets.ADZUNA_APP_KEY }}
           REED_API_KEY: ${{ secrets.REED_API_KEY }}
           JOOBLE_API_KEY: ${{ secrets.JOOBLE_API_KEY }}
-          MAX_DAYS: "3"
+          MAX_DAYS: "14"
         run: python3 scripts/fetch_jobs.py
       - name: Commit jobs.json if changed
         run: |
@@ -41,5 +41,5 @@ jobs:
             echo "No change"
           else
             git commit -m "Fresh jobs: $(date -u +'%Y-%m-%d %H:%M UTC')"
-            git push
+            git pull --rebase origin main && git push
           fi

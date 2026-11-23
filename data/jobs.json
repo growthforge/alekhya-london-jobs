@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-11-23T11:12:35.474474+00:00",
+ "generated_at": "2026-11-23T11:26:39.021023+00:00",
  "max_days": 14,
  "sources": {
-  "Company careers boards (Greenhouse, Lever, Ashby, Workable, SmartRecruiters)": "ok (111/111 boards, 11940 adverts)",
+  "Company careers boards (Greenhouse, Lever, Ashby, Workable, SmartRecruiters)": "ok (111/111 boards, 11941 adverts)",
   "Company careers (Workday: Salesforce, LSEG, RELX, Aviva)": "ok (4/4 sites, 125 adverts)",
   "Workable job search": "ok (572 adverts)",
-  "Reed (RSS feed)": "ok (1306 in feed, 64 adverts read)",
+  "Reed (RSS feed)": "ok (1295 in feed, 62 adverts read)",
   "NHS Jobs": "ok (516 adverts)",
   "Adzuna API": "inactive: add repo secrets ADZUNA_APP_ID and ADZUNA_APP_KEY",
   "Reed API": "inactive: add repo secret REED_API_KEY",
@@ -16,13 +16,13 @@
   "Workable": 4,
   "Company careers": 1
  },
- "raw_count": 13217,
+ "raw_count": 13216,
  "excluded": {
-  "excluded title": 9949,
-  "not a target title": 3041,
+  "excluded title": 9952,
+  "not a target title": 3039,
   "older than 14 days": 47,
   "outside London area": 86,
-  "contract / fixed-term": 42,
+  "contract / fixed-term": 40,
   "not full-time permanent": 17,
   "security clearance": 1
  },

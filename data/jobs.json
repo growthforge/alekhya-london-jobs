@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-23T01:40:11.700397+00:00",
+ "generated_at": "2026-11-23T01:54:03.744984+00:00",
  "max_days": 3,
  "sources": {
   "Adzuna": "inactive: add repo secrets ADZUNA_APP_ID and ADZUNA_APP_KEY",

@@ -1,33 +1,74 @@
 {
- "generated_at": "2026-11-23T17:59:48.175727+00:00",
+ "generated_at": "2026-11-24T17:37:54.722578+00:00",
  "max_days": 14,
  "sources": {
-  "Company careers boards (Greenhouse, Lever, Ashby, Workable, SmartRecruiters)": "ok (111/111 boards, 11893 adverts)",
-  "Company careers (Workday: Salesforce, LSEG, RELX, Aviva)": "ok (4/4 sites, 126 adverts)",
-  "Workable job search": "ok (575 adverts)",
-  "Reed (RSS feed)": "ok (1312 in feed, 66 adverts read)",
-  "NHS Jobs": "ok (517 adverts)",
+  "Company careers boards (Greenhouse, Lever, Ashby, Workable, SmartRecruiters)": "ok (110/111 boards, 11834 adverts); unavailable: Thoughtworks: HTTPError",
+  "Company careers (Workday: Salesforce, LSEG, RELX, Aviva)": "ok (4/4 sites, 127 adverts)",
+  "Workable job search": "ok (581 adverts)",
+  "Reed (RSS feed)": "ok (1278 in feed, 61 adverts read)",
+  "NHS Jobs": "ok (520 adverts)",
   "Adzuna API": "inactive: add repo secrets ADZUNA_APP_ID and ADZUNA_APP_KEY",
   "Reed API": "inactive: add repo secret REED_API_KEY",
   "Jooble API": "inactive (optional): add repo secret JOOBLE_API_KEY"
  },
  "per_source": {
-  "Reed": 19,
-  "Workable": 4,
+  "Reed": 18,
+  "Workable": 5,
   "Company careers": 1
  },
- "raw_count": 13177,
+ "raw_count": 13123,
  "excluded": {
-  "excluded title": 9935,
+  "excluded title": 9918,
   "older than 14 days": 49,
-  "not a target title": 3005,
-  "outside London area": 84,
-  "contract / fixed-term": 42,
-  "not full-time permanent": 25,
-  "security clearance": 1
+  "not a target title": 2968,
+  "outside London area": 80,
+  "contract / fixed-term": 48,
+  "not full-time permanent": 25
  },
  "count": 24,
  "jobs": [
+  {
+   "source": "Reed",
+   "title": "Salesforce Revenue Cloud Consultant",
+   "company": "Mason Frank",
+   "location": "London, South East England, GB",
+   "url": "https://www.reed.co.uk/jobs/salesforce-revenue-cloud-consultant/57605846",
+   "posted": "2026-11-24T00:00:00+00:00",
+   "salary_min": 70000,
+   "salary_max": 85000,
+   "salary_text": "",
+   "contract": null,
+   "hours": "full-time",
+   "roles": [
+    "P2"
+   ],
+   "role": "Salesforce Functional Consultant",
+   "where": "London",
+   "age_days": 0,
+   "salary": "£70,000 – £85,000",
+   "id": "mason-frank-salesforce-revenue-cloud-consultant"
+  },
+  {
+   "source": "Workable",
+   "title": "Project Administrator - Engineering",
+   "company": "Sword Group",
+   "location": "London, England, United Kingdom",
+   "url": "https://jobs.workable.com/view/7ahhi7JLtQwUfF3YvwQVqB/hybrid-project-administrator---engineering-in-london-at-sword-group",
+   "posted": "2026-11-24T00:00:00+00:00",
+   "salary_min": null,
+   "salary_max": null,
+   "salary_text": "",
+   "contract": null,
+   "hours": "full-time",
+   "roles": [
+    "B2"
+   ],
+   "role": "Project Coordinator / PMO",
+   "where": "London",
+   "age_days": 0,
+   "salary": "",
+   "id": "sword-project-administrator-engineering"
+  },
   {
    "source": "Reed",
    "title": "CRM Support Business Analyst",
@@ -46,7 +87,7 @@
    ],
    "role": "Salesforce Business Analyst",
    "where": "London",
-   "age_days": 0,
+   "age_days": 1,
    "salary": "",
    "id": "arc-it-crm-support-business-analyst"
   },
@@ -67,7 +108,7 @@
    ],
    "role": "Business Analyst",
    "where": "London",
-   "age_days": 0,
+   "age_days": 1,
    "salary": "£50,000 – £70,000",
    "id": "tenth-revolution-business-analyst"
   },
@@ -88,7 +129,7 @@
    ],
    "role": "Business Analyst",
    "where": "London",
-   "age_days": 0,
+   "age_days": 1,
    "salary": "",
    "id": "lorien-business-analyst-group-risk-compliance"
   },
@@ -109,7 +150,7 @@
    ],
    "role": "CRM / Database Officer",
    "where": "London",
-   "age_days": 3,
+   "age_days": 4,
    "salary": "",
    "id": "wingstop-i-crm-executive"
   },
@@ -130,7 +171,7 @@
    ],
    "role": "UAT / Test Analyst",
    "where": "London",
-   "age_days": 3,
+   "age_days": 4,
    "also_on": [],
    "salary": "",
    "id": "lmax-test-analyst"
@@ -152,7 +193,7 @@
    ],
    "role": "Salesforce Functional Consultant",
    "where": "London",
-   "age_days": 4,
+   "age_days": 5,
    "salary": "£65,000 – £75,000",
    "id": "mason-frank-functional-salesforce-consultant-sfmc-marketing-cloud-next"
   },
@@ -173,7 +214,7 @@
    ],
    "role": "Project Coordinator / PMO",
    "where": "London",
-   "age_days": 4,
+   "age_days": 5,
    "also_on": [],
    "salary": "",
    "id": "hyde-project-coordinator"
@@ -195,7 +236,7 @@
    ],
    "role": "Implementation Consultant",
    "where": "London",
-   "age_days": 4,
+   "age_days": 5,
    "also_on": [],
    "salary": "",
    "id": "indra-ireland-bmc-helix-itsm-implementation-consultant"
@@ -217,7 +258,7 @@
    ],
    "role": "Business Analyst",
    "where": "London",
-   "age_days": 5,
+   "age_days": 6,
    "salary": "",
    "id": "invenire-regulatory-business-analyst"
   },
@@ -238,7 +279,7 @@
    ],
    "role": "Business Analyst",
    "where": "London",
-   "age_days": 5,
+   "age_days": 6,
    "salary": "",
    "id": "crisil-business-analyst-market-risk-frtb-ima"
   },
@@ -259,7 +300,7 @@
    ],
    "role": "Business Analyst",
    "where": "London",
-   "age_days": 5,
+   "age_days": 6,
    "salary": "",
    "id": "crisil-business-analyst-market-data-and-analytics"
   },
@@ -280,7 +321,7 @@
    ],
    "role": "UAT / Test Analyst",
    "where": "London",
-   "age_days": 6,
+   "age_days": 7,
    "salary": "",
    "id": "g-mass-consulting-salesforce-test-analyst"
   },
@@ -301,7 +342,7 @@
    ],
    "role": "Business Analyst",
    "where": "London",
-   "age_days": 6,
+   "age_days": 7,
    "salary": "",
    "id": "cititec-talent-commodities-technical-business-analyst"
   },
@@ -322,7 +363,7 @@
    ],
    "role": "Project Coordinator / PMO",
    "where": "London",
-   "age_days": 6,
+   "age_days": 7,
    "also_on": [],
    "salary": "",
    "id": "ubds-pmo-analyst"
@@ -344,7 +385,7 @@
    ],
    "role": "Business Analyst",
    "where": "London",
-   "age_days": 7,
+   "age_days": 8,
    "salary": "",
    "id": "pharos-resource-partners-automation-business-analyst-asset-management"
   },
@@ -366,7 +407,7 @@
    ],
    "role": "Salesforce Business Analyst",
    "where": "London",
-   "age_days": 7,
+   "age_days": 8,
    "salary": "",
    "id": "pharos-resource-partners-crm-business-analyst-asset-management"
   },
@@ -387,16 +428,16 @@
    ],
    "role": "Business Analyst",
    "where": "London",
-   "age_days": 7,
+   "age_days": 8,
    "salary": "",
    "id": "selby-jennings-disclosures-business-analyst-regulatory-reporting"
   },
   {
    "source": "Reed",
-   "title": "Test Analyst",
-   "company": "eFinancialCareers",
+   "title": "Calypso Business Analyst",
+   "company": "G MASS Consulting",
    "location": "London, South East England, GB",
-   "url": "https://www.reed.co.uk/jobs/test-analyst/57575656",
+   "url": "https://www.reed.co.uk/jobs/calypso-business-analyst-g-mass-consulting/57574141",
    "posted": "2026-11-16T00:00:00+00:00",
    "salary_min": null,
    "salary_max": null,
@@ -404,13 +445,13 @@
    "contract": null,
    "hours": "full-time",
    "roles": [
-    "B3"
+    "B1"
    ],
-   "role": "UAT / Test Analyst",
+   "role": "Business Analyst",
    "where": "London",
-   "age_days": 7,
+   "age_days": 8,
    "salary": "",
-   "id": "efinancialcareers-test-analyst"
+   "id": "g-mass-consulting-calypso-business-analyst"
   },
   {
    "source": "Reed",
@@ -429,7 +470,7 @@
    ],
    "role": "Business Analyst",
    "where": "London",
-   "age_days": 7,
+   "age_days": 8,
    "salary": "",
    "id": "lgt-capital-partners-junior-business-analyst"
   },
@@ -450,7 +491,7 @@
    ],
    "role": "UAT / Test Analyst",
    "where": "London",
-   "age_days": 7,
+   "age_days": 8,
    "salary": "£50,000 – £60,000",
    "id": "ashdown-test-analyst"
   },
@@ -471,7 +512,7 @@
    ],
    "role": "Business Analyst",
    "where": "London",
-   "age_days": 10,
+   "age_days": 11,
    "salary": "",
    "id": "deliveroo-business-systems-analyst-workday-time-tracking-absence-management"
   },
@@ -492,53 +533,10 @@
    ],
    "role": "Business Analyst",
    "where": "London",
-   "age_days": 12,
+   "age_days": 13,
    "also_on": [],
    "salary": "",
    "id": "abm-business-systems-analyst"
-  },
-  {
-   "source": "Reed",
-   "title": "E-Invoicing Implementation Specialist",
-   "company": "Hays Specialist Recruitment Limited",
-   "location": "London, South East England, GB",
-   "url": "https://www.reed.co.uk/jobs/e-invoicing-implementation-specialist/57544011",
-   "posted": "2026-11-09T00:00:00+00:00",
-   "salary_min": 40000,
-   "salary_max": 75000,
-   "salary_text": "",
-   "contract": null,
-   "hours": "full-time",
-   "roles": [
-    "B4"
-   ],
-   "role": "Implementation Consultant",
-   "where": "London",
-   "age_days": 14,
-   "also_on": [],
-   "salary": "£40,000 – £75,000",
-   "id": "hays-specialist-e-invoicing-implementation-specialist"
-  },
-  {
-   "source": "Reed",
-   "title": "Project Coordinator",
-   "company": "VWA (Victoria Wall Associates)",
-   "location": "London, South East England, GB",
-   "url": "https://www.reed.co.uk/jobs/project-coordinator/57546157",
-   "posted": "2026-11-09T00:00:00+00:00",
-   "salary_min": 30000,
-   "salary_max": 35000,
-   "salary_text": "",
-   "contract": null,
-   "hours": "full-time",
-   "roles": [
-    "B2"
-   ],
-   "role": "Project Coordinator / PMO",
-   "where": "London",
-   "age_days": 14,
-   "salary": "£30,000 – £35,000",
-   "id": "vwa-victoria-wall-associates-project-coordinator"
   }
  ],
  "filters": [

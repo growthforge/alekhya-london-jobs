@@ -1,32 +1,137 @@
 {
- "generated_at": "2026-11-26T16:50:15.725503+00:00",
+ "generated_at": "2026-11-27T16:35:53.498400+00:00",
  "max_days": 14,
  "sources": {
-  "Company careers boards (Greenhouse, Lever, Ashby, Workable, SmartRecruiters)": "ok (109/111 boards, 11800 adverts); unavailable: Farfetch: HTTPError, Thoughtworks: HTTPError",
+  "Company careers boards (Greenhouse, Lever, Ashby, Workable, SmartRecruiters)": "ok (109/111 boards, 11765 adverts); unavailable: Farfetch: HTTPError, Thoughtworks: HTTPError",
   "Company careers (Workday: Salesforce, LSEG, RELX, Aviva)": "ok (4/4 sites, 126 adverts)",
-  "Workable job search": "ok (573 adverts)",
-  "Reed (RSS feed)": "ok (1301 in feed, 65 adverts read)",
-  "NHS Jobs": "ok (512 adverts)",
+  "Workable job search": "ok (579 adverts)",
+  "Reed (RSS feed)": "ok (1304 in feed, 72 adverts read)",
+  "NHS Jobs": "ok (514 adverts)",
   "Adzuna API": "inactive: add repo secrets ADZUNA_APP_ID and ADZUNA_APP_KEY",
   "Reed API": "inactive: add repo secret REED_API_KEY",
   "Jooble API": "inactive (optional): add repo secret JOOBLE_API_KEY"
  },
  "per_source": {
-  "Reed": 22,
+  "Reed": 26,
   "Workable": 4,
   "Company careers": 1
  },
- "raw_count": 13076,
+ "raw_count": 13056,
  "excluded": {
-  "excluded title": 9843,
-  "older than 14 days": 52,
-  "not a target title": 2994,
-  "outside London area": 84,
-  "contract / fixed-term": 47,
-  "not full-time permanent": 21
+  "excluded title": 9800,
+  "older than 14 days": 51,
+  "not a target title": 3010,
+  "outside London area": 78,
+  "not full-time permanent": 28,
+  "contract / fixed-term": 51
  },
- "count": 27,
+ "count": 31,
  "jobs": [
+  {
+   "source": "Reed",
+   "title": "Business Systems Analyst - Commodities",
+   "company": "Marks Sattin",
+   "location": "London, South East England, GB",
+   "url": "https://www.reed.co.uk/jobs/business-systems-analyst-commodities/57620137",
+   "posted": "2026-11-27T00:00:00+00:00",
+   "salary_min": 80000,
+   "salary_max": 100000,
+   "salary_text": "",
+   "contract": null,
+   "hours": "full-time",
+   "roles": [
+    "B1"
+   ],
+   "role": "Business Analyst",
+   "where": "London",
+   "age_days": 0,
+   "salary": "£80,000 – £100,000",
+   "id": "marks-sattin-business-systems-analyst-commodities"
+  },
+  {
+   "source": "Reed",
+   "title": "Business Analyst",
+   "company": "Capgemini",
+   "location": "London, South East England, GB",
+   "url": "https://www.reed.co.uk/jobs/business-analyst/57618004",
+   "posted": "2026-11-27T00:00:00+00:00",
+   "salary_min": null,
+   "salary_max": null,
+   "salary_text": "",
+   "contract": null,
+   "hours": "full-time",
+   "roles": [
+    "B1"
+   ],
+   "role": "Business Analyst",
+   "where": "London",
+   "age_days": 0,
+   "salary": "",
+   "id": "capgemini-business-analyst"
+  },
+  {
+   "source": "Reed",
+   "title": "Business Analyst | Entry into Private Equity",
+   "company": "Meraki Talent Limited",
+   "location": "London, South East England, GB",
+   "url": "https://www.reed.co.uk/jobs/business-analyst--entry-into-private-equity/57619445",
+   "posted": "2026-11-27T00:00:00+00:00",
+   "salary_min": 40000,
+   "salary_max": 45000,
+   "salary_text": "",
+   "contract": null,
+   "hours": "full-time",
+   "roles": [
+    "B1"
+   ],
+   "role": "Business Analyst",
+   "where": "London",
+   "age_days": 0,
+   "salary": "£40,000 – £45,000",
+   "id": "meraki-talent-business-analyst-entry-into-private-equity"
+  },
+  {
+   "source": "Reed",
+   "title": "Digital Analytics Implementation Specialist - Adobe",
+   "company": "Harnham - Data & Analytics Recruitment",
+   "location": "London, South East England, GB",
+   "url": "https://www.reed.co.uk/jobs/digital-analytics-implementation-specialist-adobe/57620523",
+   "posted": "2026-11-27T00:00:00+00:00",
+   "salary_min": 50000,
+   "salary_max": 60000,
+   "salary_text": "",
+   "contract": null,
+   "hours": "full-time",
+   "roles": [
+    "B4"
+   ],
+   "role": "Implementation Consultant",
+   "where": "London",
+   "age_days": 0,
+   "salary": "£50,000 – £60,000",
+   "id": "harnham-data-analytics-digital-analytics-implementation-specialist-adobe"
+  },
+  {
+   "source": "Reed",
+   "title": "IT Business Analyst",
+   "company": "Connect Recruitment Consultants Ltd.",
+   "location": "Slough, South East England, GB",
+   "url": "https://www.reed.co.uk/jobs/it-business-analyst/57615923",
+   "posted": "2026-11-26T00:00:00+00:00",
+   "salary_min": null,
+   "salary_max": null,
+   "salary_text": "",
+   "contract": null,
+   "hours": "full-time",
+   "roles": [
+    "B1"
+   ],
+   "role": "Business Analyst",
+   "where": "London",
+   "age_days": 1,
+   "salary": "",
+   "id": "connect-consultants-it-business-analyst"
+  },
   {
    "source": "Reed",
    "title": "FCC - Business Analyst- London",
@@ -44,7 +149,7 @@
    ],
    "role": "Business Analyst",
    "where": "London",
-   "age_days": 0,
+   "age_days": 1,
    "also_on": [],
    "salary": "",
    "id": "capgemini-fcc-business-analyst-london"
@@ -66,7 +171,7 @@
    ],
    "role": "Project Coordinator / PMO",
    "where": "London",
-   "age_days": 1,
+   "age_days": 2,
    "salary": "£28,000 – £35,000",
    "id": "itol-recruit-trainee-junior-project-manager"
   },
@@ -87,7 +192,7 @@
    ],
    "role": "Business Analyst",
    "where": "London",
-   "age_days": 1,
+   "age_days": 2,
    "salary": "£50,000 – £60,000",
    "id": "constant-technical-business-analyst"
   },
@@ -108,7 +213,7 @@
    ],
    "role": "UAT / Test Analyst",
    "where": "London",
-   "age_days": 1,
+   "age_days": 2,
    "salary": "£35,000 – £40,000",
    "id": "kevin-theobald-agency-test-analyst"
   },
@@ -129,7 +234,7 @@
    ],
    "role": "Salesforce Functional Consultant",
    "where": "London",
-   "age_days": 2,
+   "age_days": 3,
    "salary": "£70,000 – £85,000",
    "id": "mason-frank-salesforce-revenue-cloud-consultant"
   },
@@ -150,7 +255,7 @@
    ],
    "role": "Project Coordinator / PMO",
    "where": "London",
-   "age_days": 2,
+   "age_days": 3,
    "salary": "",
    "id": "sword-project-administrator-engineering"
   },
@@ -172,7 +277,7 @@
    ],
    "role": "Salesforce Business Analyst",
    "where": "London",
-   "age_days": 3,
+   "age_days": 4,
    "salary": "",
    "id": "arc-it-crm-support-business-analyst"
   },
@@ -193,7 +298,7 @@
    ],
    "role": "Business Analyst",
    "where": "London",
-   "age_days": 3,
+   "age_days": 4,
    "salary": "£50,000 – £70,000",
    "id": "tenth-revolution-business-analyst"
   },
@@ -214,7 +319,7 @@
    ],
    "role": "CRM / Database Officer",
    "where": "London",
-   "age_days": 6,
+   "age_days": 7,
    "salary": "",
    "id": "wingstop-i-crm-executive"
   },
@@ -235,7 +340,7 @@
    ],
    "role": "UAT / Test Analyst",
    "where": "London",
-   "age_days": 6,
+   "age_days": 7,
    "also_on": [],
    "salary": "",
    "id": "lmax-test-analyst"
@@ -257,31 +362,9 @@
    ],
    "role": "Salesforce Functional Consultant",
    "where": "London",
-   "age_days": 7,
+   "age_days": 8,
    "salary": "£65,000 – £75,000",
    "id": "mason-frank-functional-salesforce-consultant-sfmc-marketing-cloud-next"
-  },
-  {
-   "source": "Reed",
-   "title": "Project Coordinator",
-   "company": "The Hyde Group",
-   "location": "London, South East England, GB",
-   "url": "https://www.reed.co.uk/jobs/project-coordinator/57591272",
-   "posted": "2026-11-19T00:00:00+00:00",
-   "salary_min": null,
-   "salary_max": null,
-   "salary_text": "",
-   "contract": null,
-   "hours": "full-time",
-   "roles": [
-    "B2"
-   ],
-   "role": "Project Coordinator / PMO",
-   "where": "London",
-   "age_days": 7,
-   "also_on": [],
-   "salary": "",
-   "id": "hyde-project-coordinator"
   },
   {
    "source": "Workable",
@@ -300,7 +383,7 @@
    ],
    "role": "Implementation Consultant",
    "where": "London",
-   "age_days": 7,
+   "age_days": 8,
    "also_on": [],
    "salary": "",
    "id": "indra-ireland-bmc-helix-itsm-implementation-consultant"
@@ -322,7 +405,7 @@
    ],
    "role": "Business Analyst",
    "where": "London",
-   "age_days": 8,
+   "age_days": 9,
    "salary": "",
    "id": "invenire-regulatory-business-analyst"
   },
@@ -343,7 +426,7 @@
    ],
    "role": "Business Analyst",
    "where": "London",
-   "age_days": 8,
+   "age_days": 9,
    "salary": "",
    "id": "crisil-business-analyst-market-risk-frtb-ima"
   },
@@ -364,7 +447,7 @@
    ],
    "role": "Business Analyst",
    "where": "London",
-   "age_days": 8,
+   "age_days": 9,
    "salary": "",
    "id": "crisil-business-analyst-market-data-and-analytics"
   },
@@ -385,7 +468,7 @@
    ],
    "role": "UAT / Test Analyst",
    "where": "London",
-   "age_days": 9,
+   "age_days": 10,
    "salary": "",
    "id": "g-mass-consulting-salesforce-test-analyst"
   },
@@ -406,7 +489,7 @@
    ],
    "role": "Business Analyst",
    "where": "London",
-   "age_days": 9,
+   "age_days": 10,
    "salary": "",
    "id": "cititec-talent-commodities-technical-business-analyst"
   },
@@ -427,7 +510,7 @@
    ],
    "role": "Project Coordinator / PMO",
    "where": "London",
-   "age_days": 9,
+   "age_days": 10,
    "also_on": [],
    "salary": "",
    "id": "ubds-pmo-analyst"
@@ -449,7 +532,7 @@
    ],
    "role": "Business Analyst",
    "where": "London",
-   "age_days": 10,
+   "age_days": 11,
    "salary": "",
    "id": "pharos-resource-partners-automation-business-analyst-asset-management"
   },
@@ -471,7 +554,7 @@
    ],
    "role": "Salesforce Business Analyst",
    "where": "London",
-   "age_days": 10,
+   "age_days": 11,
    "salary": "",
    "id": "pharos-resource-partners-crm-business-analyst-asset-management"
   },
@@ -492,7 +575,7 @@
    ],
    "role": "Business Analyst",
    "where": "London",
-   "age_days": 10,
+   "age_days": 11,
    "salary": "",
    "id": "selby-jennings-disclosures-business-analyst-regulatory-reporting"
   },
@@ -513,7 +596,7 @@
    ],
    "role": "UAT / Test Analyst",
    "where": "London",
-   "age_days": 10,
+   "age_days": 11,
    "salary": "",
    "id": "efinancialcareers-test-analyst"
   },
@@ -534,7 +617,7 @@
    ],
    "role": "Business Analyst",
    "where": "London",
-   "age_days": 10,
+   "age_days": 11,
    "salary": "",
    "id": "g-mass-consulting-equity-swaps-business-analyst"
   },
@@ -555,7 +638,7 @@
    ],
    "role": "Business Analyst",
    "where": "London",
-   "age_days": 10,
+   "age_days": 11,
    "salary": "",
    "id": "lgt-capital-partners-junior-business-analyst"
   },
@@ -576,7 +659,7 @@
    ],
    "role": "UAT / Test Analyst",
    "where": "London",
-   "age_days": 10,
+   "age_days": 11,
    "salary": "£50,000 – £60,000",
    "id": "ashdown-test-analyst"
   },
@@ -597,7 +680,7 @@
    ],
    "role": "Business Analyst",
    "where": "London",
-   "age_days": 13,
+   "age_days": 14,
    "salary": "",
    "id": "deliveroo-business-systems-analyst-workday-time-tracking-absence-management"
   }
